@@ -16,16 +16,17 @@ dans `scripts/lib.sh`) refuse de toucher à ces applis, même si on se trompe da
    - Paramètres > Ma Fire TV > À propos > **Réseau** : notez l'**adresse IP**.
 2. **Sur le Mac** (même Wi-Fi que la TV), dans Terminal :
    ```bash
-   brew install android-platform-tools
    git clone https://github.com/sv84wbtqrt-maker/tv.git
    cd tv
-   chmod +x scripts/*.sh
+   ./scripts/00-install-adb.sh
    ```
+   (Installe `adb` dans `~/platform-tools` sans Homebrew.)
 
 ## Étapes
 
 | # | Commande | Ce qu'elle fait | Modifie la TV ? |
 |---|----------|-----------------|-----------------|
+| 0 | `./scripts/00-install-adb.sh` | Installe adb sur le Mac (une seule fois) | Non |
 | 1 | `./scripts/01-connect.sh 192.168.x.x` | Connexion Wi-Fi (acceptez la demande à l'écran) | Non |
 | 2 | `./scripts/02-audit.sh` | Inventaire des applis, de la mémoire et des réglages dans `audit/` | Non |
 | 3 | `./scripts/03-disable.sh packages/approved.txt` | Désactive les applis validées, avec une confirmation par appli | Oui (annulable) |

@@ -15,7 +15,8 @@ mkdir -p "$STATE" "$AUDIT"
 
 die() { echo "ERREUR : $*" >&2; exit 1; }
 
-command -v adb >/dev/null 2>&1 || die "adb introuvable. Installez-le : brew install android-platform-tools"
+[ -x "$HOME/platform-tools/adb" ] && PATH="$HOME/platform-tools:$PATH"
+command -v adb >/dev/null 2>&1 || die "adb introuvable. Installez-le : ./scripts/00-install-adb.sh"
 
 if [ -f "$CONFIG" ]; then
   # shellcheck disable=SC1090
