@@ -6,13 +6,19 @@
 IP="${1:-${TV_IP:-}}"
 [ -n "$IP" ] || die "Indiquez l'adresse IP : ./scripts/01-connect.sh 192.168.1.42 (TV : Paramètres > Ma Fire TV > À propos > Réseau)"
 
+echo "$IP" | grep -Eq '^([0-9]{1,3}\.){3}[0-9]{1,3}$' || die "« $IP » n'est pas une adresse valide. Exemple : 192.168.12.150 (4 nombres séparés par des points)."
+case "$IP" in
+  *.1) echo "ATTENTION : une adresse en .1 est en général la box internet, pas la TV."
+       echo "Lancez ./scripts/find-tv.sh pour trouver la TV."; echo ;;
+esac
+
 echo "Connexion à $IP:5555..."
 echo "Si une fenêtre « Autoriser le débogage USB ? » apparaît sur la TV, cochez « Toujours autoriser » puis OK."
 adb connect "$IP:5555"
 
-echo "TV_IP=\"$IP\"" > "$CONFIG"
 TV_IP="$IP"
 load_device
+echo "TV_IP=\"$IP\"" > "$CONFIG"   # on ne retient l'adresse que si la connexion a réussi
 
 echo
 echo "Connecté. Modèle : $(tv getprop ro.product.model) | Fire OS : $(tv getprop ro.build.version.name) | Android $(tv getprop ro.build.version.release)"

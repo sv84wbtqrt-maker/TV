@@ -27,7 +27,7 @@ dans `scripts/lib.sh`) refuse de toucher à ces applis, même si on se trompe da
 | # | Commande | Ce qu'elle fait | Modifie la TV ? |
 |---|----------|-----------------|-----------------|
 | 0 | `./scripts/00-install-adb.sh` | Installe adb sur le Mac (une seule fois) | Non |
-| 1 | `./scripts/01-connect.sh 192.168.x.x` | Connexion Wi-Fi (acceptez la demande à l'écran) | Non |
+| 1 | `./scripts/find-tv.sh` puis `./scripts/01-connect.sh 192.168.x.x` | Trouve la TV sur le Wi-Fi, puis s’y connecte (acceptez la demande à l’écran) | Non |
 | 2 | `./scripts/02-audit.sh` | Inventaire des applis, de la mémoire et des réglages dans `audit/` | Non |
 | 3 | `./scripts/03-disable.sh packages/approved.txt` | Désactive les applis validées, avec une confirmation par appli | Oui (annulable) |
 | 4 | `./scripts/04-tweaks.sh` | Coupe les animations, veille après 5 min | Oui (annulable) |
