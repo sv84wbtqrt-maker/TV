@@ -20,7 +20,6 @@ com.amazon.tv.democontent.provider   # Contenu de démonstration (magasin)
 com.amazon.tmm.tutorial              # Tutoriel
 com.amazon.storm.lightning.tutorial  # Tutoriel
 com.amazon.tv.releasenotes           # Notes de version
-com.amazon.tv.csapp                  # Appli d'aide / service client
 
 # --- Composants Android inutiles sur une TV ---
 com.android.printspooler             # Impression

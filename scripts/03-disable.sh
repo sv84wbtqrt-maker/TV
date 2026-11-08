@@ -42,7 +42,7 @@ while IFS= read -r line || [ -n "$line" ]; do
     echo "$(date '+%Y-%m-%d %H:%M:%S') $p" >> "$UNDO_LIST"
     echo "  -> désactivée : $p"; done_n=$((done_n+1))
   else
-    echo "  -> ÉCHEC (Fire OS refuse souvent pour certaines applis Amazon) : $p : $res"
+    echo "  -> ÉCHEC, Fire OS protège cette appli (sans gravité) : $p : $(echo "$res" | grep -m1 -i exception)"
     fail_n=$((fail_n+1))
   fi
 done < "$LIST"
