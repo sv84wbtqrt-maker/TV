@@ -1,0 +1,15 @@
+# LOT 2 : statistiques et rapports envoyés à Amazon. Risque moyen.
+# À lancer SEULEMENT après le lot 1 et un redémarrage réussi (05-reboot-check.sh).
+# Lancement : ./scripts/03-disable.sh packages/approved-2-telemetry.txt
+
+com.amazon.device.crashmanager       # Rapports de plantage
+com.amazon.dp.logger                 # Journaux d'utilisation
+com.amazon.device.logmanager         # Journaux système
+com.amazon.neo.minerva.logcat        # Collecte de journaux
+com.amazon.device.metrics            # Statistiques d'usage
+com.amazon.client.metrics.api        # Statistiques d'usage (API)
+com.amazon.tv.fw.metrics             # Statistiques système
+com.amazon.wirelessmetrics.service   # Statistiques Wi-Fi
+com.amazon.perfcollection            # Mesures de performance
+com.amazon.ftvads.deeplinking        # Liens publicitaires
+com.amazon.hybridadidservice         # Identifiant publicitaire

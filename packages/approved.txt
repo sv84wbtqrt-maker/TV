@@ -1,3 +1,30 @@
-# Applis VALIDÉES pour désactivation sur l'Insignia NS-39F201NA23.
-# Vide pour l'instant : sera rempli après l'inventaire (02-audit.sh), avec votre accord.
-# Une appli par ligne. Lancement : ./scripts/03-disable.sh packages/approved.txt
+# LOT 1 : publicités, applis inutiles, tutoriels. Risque faible.
+# TV : Insignia NS-39F201NA23 (AFTALMO), Fire OS 7.7.1.7. Inventaire du 2026-11-08.
+# Lancement : ./scripts/03-disable.sh packages/approved.txt   (confirmation par appli)
+# Annulation : ./scripts/99-undo.sh
+
+# --- Publicités et suivi de ce que vous regardez ---
+com.amazon.tv.acr                    # Reconnaissance de contenu : analyse l'image (même en HDMI) pour cibler les pubs
+com.amazon.kso.blackbird             # Contenus sponsorisés / pubs de l'accueil
+com.amazon.sneakpeek                 # Bandes-annonces en lecture automatique sur l'accueil (gros consommateur)
+
+# --- Services Amazon inutiles ici ---
+com.amazon.shoptv.client             # Shopping Amazon sur la TV
+com.amazon.shoptv.firetv.client      # Shopping Amazon sur la TV
+com.amazon.minitv.android.app        # Amazon miniTV (service indien)
+com.amazon.gamehub                   # Espace jeux
+com.amazon.ods.kindleconnect         # Liaison Kindle
+
+# --- Aide, démos, tutoriels ---
+com.amazon.tv.democontent.provider   # Contenu de démonstration (magasin)
+com.amazon.tmm.tutorial              # Tutoriel
+com.amazon.storm.lightning.tutorial  # Tutoriel
+com.amazon.tv.releasenotes           # Notes de version
+com.amazon.tv.csapp                  # Appli d'aide / service client
+
+# --- Composants Android inutiles sur une TV ---
+com.android.printspooler             # Impression
+com.android.bips                     # Impression
+com.android.traceur                  # Outil de diagnostic
+com.android.nfc                      # NFC (la TV n'a pas de puce NFC)
+com.android.wallpapercropper         # Recadrage de fond d'écran

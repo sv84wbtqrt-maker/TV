@@ -1,0 +1,9 @@
+# OPTIONNEL : à vous de choisir. Retirez le # devant celles que vous voulez désactiver.
+# Lancement : ./scripts/03-disable.sh packages/optional.txt
+
+# com.amazon.bueller.music           # Amazon Music
+# com.amazon.bueller.photos          # Amazon Photos (l'économiseur d'écran utilise parfois ces photos)
+# com.amazon.cloud9                  # Navigateur Silk
+# com.amazon.tahoe                   # Amazon Kids (profils enfants)
+# com.amazon.tv.matter               # Maison connectée Matter
+# com.amazon.tv.mattercohost         # Maison connectée Matter

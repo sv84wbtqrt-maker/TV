@@ -43,6 +43,6 @@ ask() { local a; printf '%s ' "$1" >/dev/tty; read -r a </dev/tty; echo "$a"; }
 
 # Applications qu'il ne faut JAMAIS désactiver : écran d'accueil, réglages, entrées HDMI,
 # USB, TV, réseau, télécommande, mise à jour, applis de streaming, recopie d'écran.
-PROTECTED_REGEX='launcher|settings|oobe|systemui|^android$|input|hdmi|tvinput|livetv|tuner|usb|mediaprovider|media\.|externalstorage|documentsui|bluetooth|wifi|network|connectivity|remote|keyboard|ime|inputmethod|ota|update|software|packageinstaller|permissioncontroller|webview|gms|frameworks|providers|phone|shell|vizzini|alexa|voice|netflix|youtube|avod|primevideo|disney|hulu|hbo|max|paramount|peacock|spotify|plex|twitch|appletv|airscreen|airplay|mirror|miracast|wfd|cast|display'
+PROTECTED_REGEX='launcher|settings|oobe|systemui|^android$|input|hdmi|tvinput|livetv|tuner|usb|mediaprovider|media\.|externalstorage|documentsui|bluetooth|wifi|network|connectivity|remote|keyboard|ime|inputmethod|ota|update|software|packageinstaller|permissioncontroller|webview|gms|frameworks|providers|phone|shell|vizzini|alexa|voice|netflix|youtube|avod|primevideo|disney|hulu|hbo|max|paramount|peacock|spotify|plex|twitch|appletv|airscreen|airplay|mirror|miracast|wfd|cast|display|gallery|dial|fling|whisper|ivona|tts|pico|droidlogic|channelscan|venezia|profile|parental|storage'
 
 is_protected() { echo "$1" | grep -Eiq "$PROTECTED_REGEX"; }
