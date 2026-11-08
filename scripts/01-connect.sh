@@ -14,7 +14,20 @@ esac
 
 echo "Connexion à $IP:5555..."
 echo "Si une fenêtre « Autoriser le débogage USB ? » apparaît sur la TV, cochez « Toujours autoriser » puis OK."
+rm -f "$CONFIG"   # oublie toute ancienne adresse
 adb connect "$IP:5555"
+
+# Attendre (jusqu'à 60 s) que la demande soit acceptée sur la TV.
+i=0
+while [ $i -lt 30 ]; do
+  st="$(adb -s "$IP:5555" get-state 2>&1 || true)"
+  case "$st" in
+    device) break ;;
+    *unauthorized*|*authenticat*) [ $i -eq 0 ] && echo "En attente : acceptez la demande sur la TV (cochez « Toujours autoriser »)..." ;;
+    *) adb connect "$IP:5555" >/dev/null 2>&1 || true ;;
+  esac
+  sleep 2; i=$((i+1))
+done
 
 TV_IP="$IP"
 load_device
