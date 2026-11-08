@@ -1,0 +1,22 @@
+# Applis Amazon souvent désactivées sur les Fire TV, à titre de PISTES.
+# Rien ici n'est appliqué automatiquement : tout est commenté (#).
+# Les noms changent selon les versions de Fire OS. Chaque ligne sera vérifiée
+# contre l'inventaire réel de VOTRE TV (02-audit.sh) avant d'aller dans approved.txt.
+#
+# Risque : faible = juste une appli/pub ; moyen = service de fond, à tester puis redémarrer.
+
+# --- Applis Amazon que vous n'utilisez pas (faible) ---
+# com.amazon.bueller.photos        # Amazon Photos
+# com.amazon.bueller.music         # Amazon Music (gardez-la si vous l'utilisez)
+# com.amazon.tv.csapp              # Aide / service client
+# com.amazon.kindle.cms            # Contenus Kindle
+
+# --- Publicités et recommandations sur l'accueil (faible à moyen) ---
+# com.amazon.kso                   # Offres sponsorisées / pubs
+# com.amazon.aria                  # Recommandations
+
+# --- Télémétrie : envoi de statistiques à Amazon (moyen) ---
+# com.amazon.device.crashmanager   # Rapports de plantage
+# com.amazon.dp.logger             # Journaux d'utilisation
+# com.amazon.client.metrics        # Statistiques d'usage
+# com.amazon.client.metrics.api    # Statistiques d'usage (API)

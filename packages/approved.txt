@@ -1,0 +1,3 @@
+# Applis VALIDÉES pour désactivation sur l'Insignia NS-39F201NA23.
+# Vide pour l'instant : sera rempli après l'inventaire (02-audit.sh), avec votre accord.
+# Une appli par ligne. Lancement : ./scripts/03-disable.sh packages/approved.txt
